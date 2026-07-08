@@ -41,7 +41,7 @@ export async function generateMetadata({
       title: `${work.title} | HuoHuoOvO`,
       description: work.description,
       type: "article",
-      ...(work.cover.startsWith("/") && {
+      ...(work.coverExists && {
         images: [{ url: work.cover, alt: work.title }],
       }),
     },
@@ -93,15 +93,23 @@ export default async function WorkPage({ params }: WorkPageProps) {
             </div>
           </header>
 
-          <div className="mb-10 md:mb-16">
-            {/* eslint-disable-next-line @next/next/no-img-element -- Static export uses native images for work covers. */}
-            <img
-              src={work.cover}
-              alt=""
-              className="block w-full"
-              style={{ aspectRatio: "16 / 10", objectFit: "cover" }}
-            />
-          </div>
+          {work.coverExists ? (
+            <div className="mb-10 md:mb-16">
+              {/* eslint-disable-next-line @next/next/no-img-element -- Static export uses native images for work covers. */}
+              <img
+                src={work.cover}
+                alt=""
+                className="block w-full"
+                style={{ aspectRatio: "16 / 10", objectFit: "cover" }}
+              />
+            </div>
+          ) : (
+            <div className="mb-10 grid aspect-[16/10] place-items-end border border-rule bg-[linear-gradient(135deg,#f4efe4_0%,#f4efe4_55%,#e3dacb_55%,#e3dacb_56%,#d8ccba_56%)] p-5 md:mb-16">
+              <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
+                visual pending
+              </span>
+            </div>
+          )}
 
           <div className="mx-auto max-w-[720px] [&>hr:first-child+h2]:hidden [&>hr:first-child]:hidden">
             <MdxContent />

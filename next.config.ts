@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  turbopack: {
+    root: process.cwd(),
+  },
 };
 
 export default withMDX(nextConfig);

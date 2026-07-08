@@ -4,17 +4,21 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navigationItems = [
+  { href: "/#index", label: "Index" },
+  { href: "/#work", label: "Work" },
+  { href: "/#visual", label: "Visual" },
+  { href: "/#notes", label: "Notes" },
   { href: "/works/", label: "Works" },
-  { href: "/now/", label: "Now" },
-  { href: "/about/", label: "About" },
 ] as const;
 
 function normalizePath(path: string) {
+  const [pathname] = path.split("#");
+
   if (path === "/") {
     return path;
   }
 
-  return path.replace(/\/+$/, "");
+  return pathname.replace(/\/+$/, "") || "/";
 }
 
 export default function SiteNav() {
@@ -24,12 +28,14 @@ export default function SiteNav() {
   return (
     <nav
       aria-label="Primary navigation"
-      className="fixed left-6 top-6 z-20 flex max-w-[calc(100vw-3rem)] flex-wrap items-center gap-x-6 gap-y-2 font-display text-sm leading-none md:left-auto md:right-10 md:top-10 lg:right-16"
+      className="fixed left-5 top-5 z-20 flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-x-5 gap-y-2 bg-paper/82 px-1 py-1 font-display text-xs leading-none text-muted backdrop-blur md:left-auto md:right-8 md:top-7 lg:right-12"
     >
       {navigationItems.map((item) => {
+        const isHashLink = item.href.includes("#");
         const itemPath = normalizePath(item.href);
         const isActive =
-          currentPath === itemPath || currentPath.startsWith(`${itemPath}/`);
+          !isHashLink &&
+          (currentPath === itemPath || currentPath.startsWith(`${itemPath}/`));
 
         return (
           <Link
@@ -37,8 +43,8 @@ export default function SiteNav() {
             href={item.href}
             aria-current={isActive ? "page" : undefined}
             className={[
-              "border-b pb-1 text-muted transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent focus-visible:outline-offset-4",
-              isActive ? "border-accent text-ink" : "border-transparent",
+              "border-b border-transparent pb-1 transition-colors hover:border-accent hover:text-ink focus-visible:text-ink",
+              isActive ? "border-accent text-ink" : "",
             ].join(" ")}
           >
             {item.label}
@@ -48,3 +54,4 @@ export default function SiteNav() {
     </nav>
   );
 }
+

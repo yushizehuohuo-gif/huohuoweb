@@ -1,0 +1,77 @@
+# tacto / MiMo Translation Memo
+
+Date: 2026-07-07
+Status: execution memo before visual and motion update.
+
+## 1. tacto: What To Borrow
+
+- Large quiet space before information density appears.
+- Editorial structure: small navigation, thin rules, compact indexes, news-like rows.
+- Bilingual text as texture, not duplicated explanation.
+- Big type that feels cropped and composed, not shouted.
+- Links behave like text links: subtle color/position changes, no button performance.
+- Sections transition through spacing and rules instead of panels.
+
+## 2. MiMo: What To Borrow
+
+- Repeated identity text as a visual field.
+- A simple direct entrance sentence over the pattern.
+- Black, white, gray, and thin rules creating enough visual memory without complex images.
+- Row-based indexes with numbers and arrows.
+- Mobile keeps the same identity pattern but reduces density.
+
+## 3. What Not To Copy
+
+- No copied source code, assets, logo, proprietary copy, or brand shapes.
+- No `M I M O` pattern.
+- No Xiaomi product-card logic.
+- No tacto logo/menu composition copied directly.
+- No dashboard / HUD / console / radar / token wall visual language.
+
+## 4. Translation To Nick Huo
+
+The page should become:
+
+> A personal editorial cover with a HuoHuo text pattern, followed by a light index of work, tools, visual fragments, notes, and archive.
+
+tacto provides the structure and air.
+MiMo provides the memorable text-body.
+Nick provides the content temperature:
+
+- `Nick Huo`
+- `HuoHuoOvO / 火火`
+- `一些低温燃烧的东西`
+- player signals, AI tools, visual experiments, notes, unfinished residue.
+
+## 5. Homepage Structure
+
+1. Cover: name, handle, Chinese anchor line, helper sentence, slow moving text pattern.
+2. Index: five editorial rows, not cards.
+3. Work: dated work traces, compact and news-like.
+4. Visual: one strong cover crop plus fragments with mask reveal.
+5. Notes: short public-safe fragments, light paper feeling.
+6. Archive: quiet link to `/works`, no large CTA.
+
+## 6. Visual Rules
+
+- Palette: warm white, charcoal, muted red, soft gray, tiny amber only.
+- Type: reduce giant headings; let small labels and rules do the structure.
+- Chinese: `一些低温燃烧的东西` appears once in the hero, quiet and well spaced.
+- Pattern: use `HUOHUO`, `火火`, `FIELD NOTES`, `UNFINISHED`, and the core Chinese line at low opacity.
+- Motion: CSS first, then IntersectionObserver for scroll reveal. No animation library needed.
+- Reduced motion: disable movement and reveal content immediately.
+
+## 7. Files To Update
+
+- `src/app/page.tsx`
+- `src/app/globals.css`
+- `src/components/home/cover-hero.tsx`
+- `src/components/home/personal-index.tsx`
+- `src/components/home/work-trace.tsx`
+- `src/components/home/visual-field.tsx`
+- `src/components/home/notes-fragments.tsx`
+- `src/components/home/archive-footer.tsx`
+- New: `src/components/home/text-pattern.tsx`
+- New: `src/components/home/motion-observer.tsx`
+
+Unused dashboard components can remain on disk for now, but they must not be imported by the homepage.

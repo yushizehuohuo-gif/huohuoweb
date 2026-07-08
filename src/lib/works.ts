@@ -1,4 +1,4 @@
-import { readFile, readdir } from "fs/promises";
+import { access, readFile, readdir } from "fs/promises";
 import { join } from "path";
 import matter from "gray-matter";
 import { z } from "zod";
@@ -34,11 +34,25 @@ export const workSchema = z.object({
 
 export type Work = z.infer<typeof workSchema> & {
   fileName: string;
+  coverExists: boolean;
 };
 
 // --- Content directory ---
 
 const WORKS_DIR = join(process.cwd(), "content", "works");
+
+async function publicAssetExists(publicPath: string): Promise<boolean> {
+  if (!publicPath.startsWith("/")) {
+    return false;
+  }
+
+  try {
+    await access(join(process.cwd(), "public", publicPath.slice(1)));
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 // --- Loader functions ---
 
@@ -68,6 +82,7 @@ export async function getAllWorks(): Promise<Work[]> {
     works.push({
       ...parsed.data,
       fileName: file,
+      coverExists: await publicAssetExists(parsed.data.cover),
     });
   }
 

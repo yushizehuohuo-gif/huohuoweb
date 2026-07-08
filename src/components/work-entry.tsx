@@ -13,7 +13,21 @@ function WorkMeta({ work }: { work: Work }) {
 }
 
 function RhythmCover({ work }: { work: Work }) {
+  if (!work.coverExists) {
+    return (
+      <div
+        aria-hidden="true"
+        className="grid aspect-[16/10] w-full place-items-end border border-rule bg-[linear-gradient(135deg,#f4efe4_0%,#f4efe4_55%,#e3dacb_55%,#e3dacb_56%,#d8ccba_56%)] p-4"
+      >
+        <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
+          visual pending
+        </span>
+      </div>
+    );
+  }
+
   return (
+    // eslint-disable-next-line @next/next/no-img-element -- Static export uses native images for optional work covers.
     <img
       src={work.cover}
       alt=""
