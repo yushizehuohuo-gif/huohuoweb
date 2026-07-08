@@ -1,4 +1,5 @@
 import type { CoverCopy, IndexEntry } from "@/lib/homepage-content";
+import HeroPointerInteraction from "./hero-pointer-interaction";
 import TextPattern from "./text-pattern";
 
 export default function CoverHero({
@@ -14,6 +15,7 @@ export default function CoverHero({
       aria-labelledby="cover-title"
       className="cover-shell relative overflow-hidden bg-paper px-5 pb-10 pt-24 text-ink sm:px-8 md:min-h-screen md:px-10 md:pb-12 md:pt-28 lg:px-16"
     >
+      <HeroPointerInteraction />
       <TextPattern className="cover-pattern" />
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8.5rem)] max-w-[1480px] flex-col justify-end gap-14 md:min-h-[calc(100vh-9.5rem)]">
