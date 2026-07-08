@@ -4,13 +4,6 @@ const patternLines = [
   { lang: "en", text: "YUSHIZE", repeat: 7 },
   { lang: "cn", text: "一些低温燃烧的东西", repeat: 3 },
   { lang: "en", text: "FIELDNOTES", repeat: 6 },
-  { lang: "cn", text: "视觉碎片", repeat: 7 },
-  { lang: "en", text: "UNFINISHED", repeat: 5 },
-  { lang: "cn", text: "未完成的东西", repeat: 5 },
-  { lang: "en", text: "WORKS", repeat: 8 },
-  { lang: "cn", text: "工作痕迹", repeat: 6 },
-  { lang: "en", text: "TOOLS", repeat: 8 },
-  { lang: "cn", text: "工具流", repeat: 8 },
 ] as const;
 
 function PatternRows() {

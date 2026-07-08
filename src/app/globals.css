@@ -209,6 +209,8 @@ body {
 
 .text-pattern__grid {
   display: grid;
+  min-height: 100%;
+  align-content: center;
   width: 100%;
 }
 
@@ -219,8 +221,8 @@ body {
   font-family: var(--font-display), var(--font-cjk), sans-serif;
   font-size: clamp(3.7rem, 5.7vw, 5.8rem);
   font-weight: 700;
-  letter-spacing: 0.052em;
-  line-height: 1.02;
+  letter-spacing: 0.09em;
+  line-height: 1.18;
   overflow: visible;
   text-transform: uppercase;
   white-space: nowrap;
@@ -230,7 +232,7 @@ body {
 .text-pattern__row[data-lang="cn"] {
   color: rgba(0, 0, 255, 0.04);
   font-family: var(--font-cjk), sans-serif;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: none;
 }
 
@@ -733,16 +735,12 @@ body {
 
   .text-pattern__row {
     font-size: clamp(2.55rem, 11.8vw, 3.65rem);
-    letter-spacing: 0.04em;
-    line-height: 1.02;
+    letter-spacing: 0.06em;
+    line-height: 1.16;
   }
 
   .text-pattern__row[data-lang="cn"] {
-    letter-spacing: 0.1em;
-  }
-
-  .text-pattern__row:nth-child(n + 9) {
-    display: none;
+    letter-spacing: 0.13em;
   }
 
   .text-pattern__track {
