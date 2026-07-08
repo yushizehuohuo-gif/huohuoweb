@@ -7,7 +7,12 @@ const withMDX = createMDX({
   },
 });
 
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+const githubPagesBasePath = "/huohuoweb";
+
 const nextConfig: NextConfig = {
+  basePath: isGithubPages ? githubPagesBasePath : undefined,
+  assetPrefix: isGithubPages ? `${githubPagesBasePath}/` : undefined,
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   output: "export",
   trailingSlash: true,

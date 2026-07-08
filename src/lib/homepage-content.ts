@@ -47,7 +47,7 @@ export const coverCopy: CoverCopy = {
   helper: "玩家信号、AI 工具、视觉实验、个人笔记，和一些还没找到容器的东西。",
   annotation:
     "A personal index of work traces, tools, visual studies, notes, and unfinished residue.",
-  imageSrc: "/home/cover-field.svg",
+  imageSrc: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/home/cover-field.svg`,
 };
 
 export const personalIndex: IndexEntry[] = [
