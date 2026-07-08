@@ -28,7 +28,7 @@ Status: execution memo before visual and motion update.
 - No tacto logo/menu composition copied directly.
 - No dashboard / HUD / console / radar / token wall visual language.
 
-## 4. Translation To Nick Huo
+## 4. Translation To YUSHIZE
 
 The page should become:
 
@@ -36,9 +36,9 @@ The page should become:
 
 tacto provides the structure and air.
 MiMo provides the memorable text-body.
-Nick provides the content temperature:
+YUSHIZE provides the content temperature:
 
-- `Nick Huo`
+- `YUSHIZE`
 - `HuoHuoOvO / 火火`
 - `一些低温燃烧的东西`
 - player signals, AI tools, visual experiments, notes, unfinished residue.

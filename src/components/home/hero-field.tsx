@@ -19,7 +19,7 @@ export default function HeroField({ dimensions }: { dimensions: Dimension[] }) {
             id="field-title"
             className="mt-8 font-display text-5xl font-bold leading-[0.95] text-ink-on-dark sm:text-6xl md:text-[5.8rem] lg:text-[6.8rem]"
           >
-            Nick Huo
+            YUSHIZE
             <span className="mt-3 block text-[0.46em] font-semibold leading-none text-memory-amber">
               HuoHuoOvO / 火火
             </span>
@@ -81,4 +81,3 @@ export default function HeroField({ dimensions }: { dimensions: Dimension[] }) {
     </section>
   );
 }
-

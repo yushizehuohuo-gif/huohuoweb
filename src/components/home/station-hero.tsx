@@ -75,7 +75,7 @@ export default function StationHero({ copy, tokens }: StationHeroProps) {
             id="station-title"
             className="mt-8 max-w-[11ch] font-display text-[clamp(4rem,9vw,8.8rem)] font-black leading-[0.86] text-ink-on-dark"
           >
-            <span className="block">Nick Huo</span>
+            <span className="block">YUSHIZE</span>
             <span className="block text-[0.52em] leading-[0.95] text-memory-amber">
               HuoHuoOvO
             </span>
@@ -181,4 +181,3 @@ export default function StationHero({ copy, tokens }: StationHeroProps) {
     </section>
   );
 }
-

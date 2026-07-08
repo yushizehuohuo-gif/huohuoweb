@@ -1,27 +1,32 @@
-const patternRows = [
-  "HUOHUO",
-  "HUOHUOOVO",
-  "火火",
-  "FIELD NOTES",
-  "UNFINISHED",
-  "一些低温燃烧的东西",
-  "WORKS",
-  "TOOLS",
-];
+const patternLines = [
+  { lang: "en", text: "HUOHUOOVO", repeat: 6 },
+  { lang: "cn", text: "火火", repeat: 12 },
+  { lang: "en", text: "YUSHIZE", repeat: 7 },
+  { lang: "cn", text: "一些低温燃烧的东西", repeat: 3 },
+  { lang: "en", text: "FIELDNOTES", repeat: 6 },
+  { lang: "cn", text: "视觉碎片", repeat: 7 },
+  { lang: "en", text: "UNFINISHED", repeat: 5 },
+  { lang: "cn", text: "未完成的东西", repeat: 5 },
+  { lang: "en", text: "WORKS", repeat: 8 },
+  { lang: "cn", text: "工作痕迹", repeat: 6 },
+  { lang: "en", text: "TOOLS", repeat: 8 },
+  { lang: "cn", text: "工具流", repeat: 8 },
+] as const;
 
 export default function TextPattern({ className = "" }: { className?: string }) {
   return (
     <div aria-hidden="true" className={`text-pattern ${className}`}>
       <div className="text-pattern__grid">
-        {patternRows.map((text, rowIndex) => (
-          <div key={text} className="text-pattern__row">
-            {Array.from({ length: 14 }).map((_, repeatIndex) => (
-              <span key={`${text}-${repeatIndex}`} className="text-pattern__word">
-                {text}
-              </span>
-            ))}
-            <span className="text-pattern__row-index">
-              {String(rowIndex + 1).padStart(2, "0")}
+        {patternLines.map((line) => (
+          <div
+            key={`${line.lang}-${line.text}`}
+            className="text-pattern__row"
+            data-lang={line.lang}
+          >
+            <span className="text-pattern__track">
+              {Array.from({ length: line.repeat })
+                .map(() => line.text)
+                .join(" ")}
             </span>
           </div>
         ))}

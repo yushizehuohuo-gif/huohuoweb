@@ -41,7 +41,7 @@ export type NoteFragment = {
 };
 
 export const coverCopy: CoverCopy = {
-  name: "Nick Huo",
+  name: "YUSHIZE",
   handle: "HuoHuoOvO",
   anchor: "一些低温燃烧的东西",
   helper: "玩家信号、AI 工具、视觉实验、个人笔记，和一些还没找到容器的东西。",
@@ -56,7 +56,7 @@ export const personalIndex: IndexEntry[] = [
     label: "01",
     title: "Who I Am",
     description: "游戏社区、AI 工具、视觉实验和私人笔记之间的移动者。",
-    details: ["Nick Huo", "HuoHuoOvO", "火火"],
+    details: ["YUSHIZE", "HuoHuoOvO", "火火"],
     href: "#index",
   },
   {

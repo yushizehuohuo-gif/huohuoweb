@@ -148,41 +148,43 @@ body {
 }
 
 .text-pattern__grid {
-  width: max-content;
-  transform: translateX(-4%);
-  animation: pattern-drift 72s linear infinite;
+  display: grid;
+  width: 100%;
 }
 
 .text-pattern__row {
-  position: relative;
   display: block;
-  width: max-content;
+  width: 100%;
   color: rgba(31, 31, 29, 0.045);
   font-family: var(--font-display), var(--font-cjk), sans-serif;
-  font-size: clamp(4.9rem, 7.7vw, 7.2rem);
+  font-size: clamp(3.7rem, 5.7vw, 5.8rem);
   font-weight: 700;
-  line-height: 0.98;
+  letter-spacing: 0.015em;
+  line-height: 0.84;
+  overflow: visible;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-.text-pattern__row:nth-child(3n) {
+.text-pattern__row[data-lang="cn"] {
+  color: rgba(0, 0, 255, 0.04);
+  font-family: var(--font-cjk), sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+.text-pattern__row:nth-child(4n) {
   color: rgba(0, 0, 255, 0.04);
 }
 
-.text-pattern__word {
+.text-pattern__track {
   display: inline-block;
-  min-width: clamp(16rem, 26vw, 25rem);
-  padding-right: clamp(1.2rem, 2.6vw, 2.4rem);
+  width: max-content;
+  animation: pattern-row-forward 92s linear infinite;
 }
 
-.text-pattern__row-index {
-  position: absolute;
-  left: 0.65rem;
-  top: 0.8rem;
-  font-family: var(--font-ibm-plex-mono);
-  font-size: 0.65rem;
-  font-weight: 400;
-  color: rgba(31, 31, 29, 0.14);
+.text-pattern__row:nth-child(even) .text-pattern__track {
+  animation-name: pattern-row-reverse;
 }
 
 .hero-reveal {
@@ -586,12 +588,21 @@ body {
   }
 }
 
-@keyframes pattern-drift {
+@keyframes pattern-row-forward {
   from {
-    transform: translateX(-4%);
+    transform: translateX(-2%);
   }
   to {
-    transform: translateX(-16%);
+    transform: translateX(-14%);
+  }
+}
+
+@keyframes pattern-row-reverse {
+  from {
+    transform: translateX(-14%);
+  }
+  to {
+    transform: translateX(-2%);
   }
 }
 
@@ -634,26 +645,17 @@ body {
     opacity: 0.88;
   }
 
-  .text-pattern__grid {
-    transform: translateX(-18%);
-    animation-duration: 96s;
-  }
-
   .text-pattern__row {
-    font-size: clamp(3.4rem, 16vw, 4.8rem);
-    line-height: 1;
+    font-size: clamp(2.55rem, 11.8vw, 3.65rem);
+    line-height: 0.88;
   }
 
-  .text-pattern__row:nth-child(n + 5) {
+  .text-pattern__row:nth-child(n + 9) {
     display: none;
   }
 
-  .text-pattern__word {
-    min-width: 14rem;
-  }
-
-  .text-pattern__row-index {
-    display: none;
+  .text-pattern__track {
+    animation-duration: 108s;
   }
 
   .cover-index {
@@ -719,7 +721,7 @@ body {
     clip-path: inset(0) !important;
   }
 
-  .text-pattern__grid {
+  .text-pattern__track {
     animation: none !important;
   }
 
