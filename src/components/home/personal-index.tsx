@@ -12,7 +12,7 @@ export default function PersonalIndex({
     <section
       id="index"
       aria-labelledby="index-title"
-      className="bg-paper px-5 py-20 text-ink sm:px-8 md:px-10 md:py-28 lg:px-16"
+      className="section-editorial bg-paper px-5 py-20 text-ink sm:px-8 md:px-10 md:py-28 lg:px-16"
     >
       <div className="mx-auto max-w-[1240px]">
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.36fr_0.64fr]">
@@ -24,21 +24,21 @@ export default function PersonalIndex({
               id="index-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug text-ink md:text-3xl"
             >
-              一个轻量的个人索引。
+              不是介绍页，是入口目录。
             </h2>
           </div>
 
-          <div className="border-y border-rule">
+          <div className="index-sitemap border-y border-rule">
             {entries.map((entry) => {
               const row = (
                 <article
                   data-reveal
-                  className="editorial-row grid gap-4 border-t border-rule py-5 first:border-t-0 md:grid-cols-[4rem_0.25fr_1fr] md:py-6"
+                  className="editorial-row index-sitemap-row grid gap-4 border-t border-rule py-6 first:border-t-0 md:grid-cols-[4rem_0.4fr_1fr_auto] md:py-8"
                 >
                   <p className="editorial-row-number font-mono text-xs text-muted">
                     {entry.label}
                   </p>
-                  <h3 className="editorial-row-title font-display text-xl font-medium leading-tight text-ink">
+                  <h3 className="editorial-row-title font-display text-[clamp(1.65rem,3.2vw,3.6rem)] font-medium leading-[0.96] text-ink">
                     {entry.title}
                   </h3>
                   <div>
@@ -49,7 +49,7 @@ export default function PersonalIndex({
                       {entry.details.join(" / ")}
                     </p>
                   </div>
-                  <span aria-hidden="true" className="editorial-row-arrow">
+                  <span aria-hidden="true" className="editorial-row-arrow static self-start justify-self-end">
                     →
                   </span>
                 </article>

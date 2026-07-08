@@ -4,11 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navigationItems = [
-  { href: "/#index", label: "Index" },
-  { href: "/#work", label: "Work" },
-  { href: "/#visual", label: "Visual" },
-  { href: "/#notes", label: "Notes" },
-  { href: "/works/", label: "Works" },
+  { href: "/#index", label: "INDEX" },
+  { href: "/#work", label: "WORKS" },
+  { href: "/#visual", label: "VISUAL" },
+  { href: "/#notes", label: "NOTES" },
 ] as const;
 
 function normalizePath(path: string) {
@@ -26,32 +25,53 @@ export default function SiteNav() {
   const currentPath = normalizePath(pathname);
 
   return (
-    <nav
-      aria-label="Primary navigation"
-      className="fixed left-5 top-5 z-20 flex max-w-[calc(100vw-2.5rem)] flex-wrap items-center gap-x-5 gap-y-2 bg-paper/82 px-1 py-1 font-display text-xs leading-none text-muted backdrop-blur md:left-auto md:right-8 md:top-7 lg:right-12"
-    >
-      {navigationItems.map((item) => {
-        const isHashLink = item.href.includes("#");
-        const itemPath = normalizePath(item.href);
-        const isActive =
-          !isHashLink &&
-          (currentPath === itemPath || currentPath.startsWith(`${itemPath}/`));
+    <header className="site-topbar fixed inset-x-0 top-0 z-20 px-5 py-5 sm:px-8 md:px-10 lg:px-12">
+      <nav
+        aria-label="Primary navigation"
+        className="grid grid-cols-[1fr_auto_1fr] items-start gap-4 font-display text-xs leading-none text-muted"
+      >
+        <Link
+          href="/"
+          className="site-topbar-link justify-self-start text-ink"
+          aria-label="HuoHuoOvO home"
+        >
+          HuoHuo/
+        </Link>
 
-        return (
+        <Link href="/#archive" className="site-topbar-link justify-self-center">
+          OPEN
+        </Link>
+
+        <div className="flex flex-wrap justify-end gap-x-5 gap-y-2">
+          {navigationItems.map((item) => {
+            const isHashLink = item.href.includes("#");
+            const itemPath = normalizePath(item.href);
+            const isActive =
+              !isHashLink &&
+              (currentPath === itemPath || currentPath.startsWith(`${itemPath}/`));
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={[
+                  "site-topbar-link",
+                  isActive ? "text-ink" : "",
+                ].join(" ")}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <Link
-            key={item.href}
-            href={item.href}
-            aria-current={isActive ? "page" : undefined}
-            className={[
-              "border-b border-transparent pb-1 transition-colors hover:border-accent hover:text-ink focus-visible:text-ink",
-              isActive ? "border-accent text-ink" : "",
-            ].join(" ")}
+            href="/works/"
+            className="site-topbar-link hidden text-ink sm:inline-flex"
           >
-            {item.label}
+            MENU
           </Link>
-        );
-      })}
-    </nav>
+        </div>
+      </nav>
+    </header>
   );
 }
-

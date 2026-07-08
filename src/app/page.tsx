@@ -13,7 +13,6 @@ import {
   noteFragments,
   personalIndex,
   toolFootnotes,
-  visualFragments,
   workTraces,
 } from "@/lib/homepage-content";
 
@@ -27,10 +26,7 @@ export default function Home() {
         <CoverHero copy={coverCopy} index={personalIndex} />
         <PersonalIndex entries={personalIndex} tools={toolFootnotes} />
         <WorkTrace items={workTraces} />
-        <VisualField
-          imageSrc={coverCopy.imageSrc}
-          fragments={visualFragments}
-        />
+        <VisualField />
         <NotesFragments notes={noteFragments} />
         <ArchiveFooter />
       </main>

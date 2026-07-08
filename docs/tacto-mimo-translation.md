@@ -54,7 +54,7 @@ Nick provides the content temperature:
 
 ## 6. Visual Rules
 
-- Palette: warm white, charcoal, muted red, soft gray, tiny amber only.
+- Palette: tacto-like cool off-white, black, quiet gray, and direct blue links. No warm beige, burn red, amber, or gold as the core surface.
 - Type: reduce giant headings; let small labels and rules do the structure.
 - Chinese: `一些低温燃烧的东西` appears once in the hero, quiet and well spaced.
 - Pattern: use `HUOHUO`, `火火`, `FIELD NOTES`, `UNFINISHED`, and the core Chinese line at low opacity.
@@ -75,3 +75,34 @@ Nick provides the content temperature:
 - New: `src/components/home/motion-observer.tsx`
 
 Unused dashboard components can remain on disk for now, but they must not be imported by the homepage.
+
+## 8. Fidelity Pass Notes
+
+Current online gap:
+
+- The hero pattern borrowed the idea of repeated text, but not MiMo's discipline. It used mixed sizes, mixed weights, row-by-row motion, and rotation.
+- The page has sections, but not enough tacto-like web bones: corner navigation, sitemap entries, news/work rows, and address-like footer density.
+- Visual still behaves like a cropped image area instead of a strong typographic visual system.
+- Notes still read too much like cards.
+
+Corrections:
+
+- Pattern becomes a level, horizontal text grid: one size, one weight, one line-height, no rotation, no skew, one slow parent movement.
+- Top navigation becomes a tacto-like small corner system: identity left, open/contact center, menu/index right.
+- Index becomes a compact sitemap with large editorial entries and fine rules.
+- Work becomes a news/work list with period, title, short signal, metadata, and hover line.
+- Visual becomes typographic blocks using `HUOHUO`, `火火`, `FIELD NOTES`, `UNFINISHED`, and the core Chinese line.
+- Notes become numbered text records with annotations and thin rules.
+- Archive/footer becomes a small address-style information grid with works, notes, open topics, and copyright.
+
+## 9. Palette Correction
+
+Latest direction: do not keep the warm archive palette. The page should now lean closer to tacto's restraint:
+
+- cool gray-white background;
+- black or near-black typography;
+- thin neutral gray rules;
+- blue for live links and small active signals;
+- no brown, gold, amber, burn red, or beige-led atmosphere.
+
+This means the previous `Field Station` warmth is not expressed through color anymore. It is carried by the Chinese anchor line, personal content, and the quiet editorial rhythm.

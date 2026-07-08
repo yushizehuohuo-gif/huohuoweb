@@ -5,30 +5,56 @@ export default function ArchiveFooter() {
     <section
       id="archive"
       aria-labelledby="archive-title"
-      className="bg-[#24211d] px-5 py-16 text-paper sm:px-8 md:px-10 lg:px-16"
+      className="section-editorial bg-paper px-5 py-18 text-ink sm:px-8 md:px-10 lg:px-16"
     >
-      <div className="mx-auto grid max-w-[1240px] gap-8 border-t border-[#5a5043] pt-8 md:grid-cols-[0.36fr_0.64fr]">
-        <div data-reveal>
-          <p className="font-mono text-xs uppercase text-[#c9b89d]">
-            Archive
-          </p>
-          <h2
-            id="archive-title"
-            className="mt-4 font-cjk text-2xl font-medium leading-snug"
-          >
-            当前公开入口。
-          </h2>
+      <div className="mx-auto max-w-[1240px] border-t border-rule pt-8">
+        <div className="grid gap-10 md:grid-cols-[0.24fr_0.4fr_0.36fr]">
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase text-accent">A</p>
+            <h2
+              id="archive-title"
+              className="mt-12 font-cjk text-2xl font-medium leading-snug"
+            >
+              当前公开入口。
+            </h2>
+          </div>
+
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase text-muted">
+              Archive / links
+            </p>
+            <div className="mt-12 grid gap-4 font-display text-[clamp(1.6rem,3vw,3.4rem)] leading-none">
+              <Link href="/works/" className="footer-large-link">
+                ↘ Works
+              </Link>
+              <a href="#notes" className="footer-large-link">
+                ↘ Notes
+              </a>
+              <a href="#visual" className="footer-large-link">
+                ↘ Visual
+              </a>
+            </div>
+          </div>
+
+          <div data-reveal>
+            <p className="font-mono text-xs uppercase text-muted">
+              Open topics
+            </p>
+            <p className="mt-12 max-w-[30rem] font-cjk text-sm leading-7 text-deep">
+              游戏社区、玩家情绪、AI 工作流、本地 Agent、视觉系统、个人知识库，以及那些仍然需要人来判断的部分。
+            </p>
+          </div>
         </div>
-        <div data-reveal>
-          <p className="max-w-[42rem] font-cjk text-sm leading-7 text-[#d9ccb8]">
-            现在可读的内容先放在作品档案里。更多笔记、视觉研究和未完成片段，会在以后慢慢进入这个索引。
+
+        <div className="mt-18 grid gap-6 border-t border-rule pt-6 font-display text-xs text-muted md:grid-cols-[0.24fr_1fr_auto]">
+          <p className="font-mono text-xs uppercase text-accent">
+            HuoHuoOvO
           </p>
-          <Link
-            href="/works/"
-            className="archive-link mt-8 inline-flex border-b border-[#b99764] pb-1 font-mono text-sm uppercase text-[#d5b37b] transition-colors hover:text-paper"
-          >
-            enter /works
-          </Link>
+          <p>
+            Personal index for player signals, agent tools, visual fragments and
+            field notes.
+          </p>
+          <p>© 2026</p>
         </div>
       </div>
     </section>

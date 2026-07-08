@@ -16,34 +16,57 @@ export default function MotionObserver() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    if (prefersReducedMotion) {
       targets.forEach((target) => target.classList.add("is-visible"));
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.08,
-      },
-    );
-
     targets.forEach((target, index) => {
       target.style.setProperty("--reveal-order", String(index % 6));
-      observer.observe(target);
     });
 
-    return () => observer.disconnect();
+    let frame = 0;
+
+    const revealVisible = () => {
+      frame = 0;
+      const viewportHeight = window.innerHeight;
+
+      targets.forEach((target) => {
+        if (target.classList.contains("is-visible")) {
+          return;
+        }
+
+        const rect = target.getBoundingClientRect();
+        const entersViewport = rect.top < viewportHeight * 0.92;
+        const hasNotPassed = rect.bottom > viewportHeight * -0.15;
+
+        if (entersViewport && hasNotPassed) {
+          target.classList.add("is-visible");
+        }
+      });
+    };
+
+    const scheduleReveal = () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(revealVisible);
+    };
+
+    scheduleReveal();
+    window.setTimeout(scheduleReveal, 240);
+    window.addEventListener("scroll", scheduleReveal, { passive: true });
+    window.addEventListener("resize", scheduleReveal);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      window.removeEventListener("scroll", scheduleReveal);
+      window.removeEventListener("resize", scheduleReveal);
+    };
   }, []);
 
   return null;

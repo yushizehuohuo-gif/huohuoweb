@@ -52,41 +52,41 @@ export const coverCopy: CoverCopy = {
 
 export const personalIndex: IndexEntry[] = [
   {
-    id: "work",
+    id: "who",
     label: "01",
-    title: "Work",
+    title: "Who I Am",
+    description: "游戏社区、AI 工具、视觉实验和私人笔记之间的移动者。",
+    details: ["Nick Huo", "HuoHuoOvO", "火火"],
+    href: "#index",
+  },
+  {
+    id: "work",
+    label: "02",
+    title: "What I Work On",
     description: "玩家信号、内容节奏、社区判断和可执行的系统。",
     details: ["Boommunity", "DOTA2 community", "Signal workbench"],
     href: "#work",
   },
   {
-    id: "tools",
-    label: "02",
-    title: "Tools",
-    description: "不是 badge，而是把注意力、上下文和执行串起来的仪器。",
-    details: ["Obsidian", "ChatGPT", "Codex", "Hermes", "ComfyUI", "Figma"],
-    href: "#tools",
-  },
-  {
-    id: "writing",
-    label: "03",
-    title: "Writing",
-    description: "短句、笔记、未完成的想法，以及一些还不能归档的余温。",
-    details: ["field notes", "unfinished fragments", "memory"],
-    href: "#notes",
-  },
-  {
     id: "visual",
-    label: "04",
-    title: "Visual",
-    description: "图像生成、颜色、纸张感、旧屏幕记忆和私人视觉封面。",
-    details: ["cover study", "visual fragments", "paper scan"],
+    label: "03",
+    title: "Visual System",
+    description: "重复文字、图像生成、纸张感、旧屏幕记忆和私人视觉封面。",
+    details: ["HUOHUO", "FIELD NOTES", "UNFINISHED"],
     href: "#visual",
+  },
+  {
+    id: "notes",
+    label: "04",
+    title: "Field Notes",
+    description: "短句、笔记、未完成的想法，以及一些还不能归档的余温。",
+    details: ["public-safe fragments", "memory", "judgment"],
+    href: "#notes",
   },
   {
     id: "archive",
     label: "05",
-    title: "Archive",
+    title: "Archive / Works",
     description: "当前公开作品入口，以及未来会继续长出来的个人索引。",
     details: ["/works", "public notes", "selected traces"],
     href: "/works/",
@@ -95,21 +95,21 @@ export const personalIndex: IndexEntry[] = [
 
 export const workTraces: WorkTrace[] = [
   {
-    label: "public work",
+    label: "2026",
     title: "Boommunity",
     description:
       "把分散的玩家讨论整理成议题、问题、动作和可回看的判断。它不是一个炫技项目，更像一套让社区信号变得可处理的方法。",
     meta: "community intelligence / player signal / reviewable action",
   },
   {
-    label: "long field",
+    label: "2025-2026",
     title: "DOTA2 community / content operations",
     description:
       "围绕一个长期存在的游戏社区工作：官方内容、活动传播、创作者生态、玩家情绪和那些不会立刻消失的反馈余波。",
     meta: "official content / creator ecosystem / community memory",
   },
   {
-    label: "working method",
+    label: "Ongoing",
     title: "Agent workflow / Signal workbench",
     description:
       "用 Obsidian、ChatGPT、Codex、Hermes 和本地工作流把判断推到更前面。工具不是替代人，而是让人更早看见问题的形状。",
@@ -130,7 +130,7 @@ export const visualFragments: VisualFragment[] = [
   {
     label: "visual study 01",
     title: "cover field",
-    caption: "warm paper, dark field, muted burn path, old-screen memory",
+    caption: "cool paper, black field, blue link signal, old-screen memory",
     crop: "wide",
   },
   {
@@ -147,8 +147,8 @@ export const visualFragments: VisualFragment[] = [
   },
   {
     label: "visual study 04",
-    title: "red cut",
-    caption: "a quiet red cut through paper and old-screen memory",
+    title: "blue cut",
+    caption: "a sharp blue cut through paper and old-screen memory",
     crop: "right",
   },
 ];
