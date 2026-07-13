@@ -12,6 +12,9 @@ export default function SiteFooter() {
           <Link href="/works/" className="footer-small-link">
             Works
           </Link>
+          <Link href="/notes/" className="footer-small-link">
+            Notes
+          </Link>
           <Link href="/#cover" className="footer-small-link">
             Top
           </Link>

@@ -826,6 +826,20 @@ body {
   min-height: 7.5rem;
 }
 
+.note-body p {
+  margin-block: 1.3rem;
+  color: var(--ink);
+  font-family: var(--font-noto-sans-sc);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 2;
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+.note-body p:first-child {
+  margin-top: 0;
+}
+
 .footer-large-link {
   display: inline-flex;
   width: max-content;

@@ -35,11 +35,6 @@ export type VisualFragment = {
   crop: "wide" | "left" | "right" | "lower";
 };
 
-export type NoteFragment = {
-  label: string;
-  text: string;
-};
-
 export const coverCopy: CoverCopy = {
   name: "YUSHIZE",
   handle: "HuoHuoOvO",
@@ -79,9 +74,9 @@ export const personalIndex: IndexEntry[] = [
     id: "notes",
     label: "04",
     title: "Field Notes",
-    description: "短句、笔记、未完成的想法，以及一些还不能归档的余温。",
-    details: ["public-safe fragments", "memory", "judgment"],
-    href: "#notes",
+    description: "从大学时期到现在留下的九篇文章，关于相聚、晚安、友谊、爱情、意识与燃烧。",
+    details: ["9 essays", "early writings", "recent notes"],
+    href: "/notes/",
   },
   {
     id: "archive",
@@ -150,25 +145,6 @@ export const visualFragments: VisualFragment[] = [
     title: "blue cut",
     caption: "a sharp blue cut through paper and old-screen memory",
     crop: "right",
-  },
-];
-
-export const noteFragments: NoteFragment[] = [
-  {
-    label: "note 01",
-    text: "不是每个信号都应该变成任务。",
-  },
-  {
-    label: "note 02",
-    text: "有些东西留下来，是因为它们还没找到容器。",
-  },
-  {
-    label: "note 03",
-    text: "游戏社区保存的是长期情绪，不只是反馈。",
-  },
-  {
-    label: "note 04",
-    text: "工具不是替代判断，而是把判断推到更前面。",
   },
 ];
 
