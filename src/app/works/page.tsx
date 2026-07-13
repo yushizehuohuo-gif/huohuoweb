@@ -18,7 +18,11 @@ export default async function WorksPage() {
     <>
       <GrainOverlay />
       <SiteNav />
-      <main className="relative z-10 overflow-x-clip px-6 pb-16 pt-28 md:px-10 md:pt-32 lg:px-16">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="relative z-10 overflow-x-clip px-6 pb-16 pt-28 md:px-10 md:pt-32 lg:px-16"
+      >
         <div className="mb-16 md:mb-24">
           <h1 className="font-display text-4xl font-bold leading-none text-ink md:text-5xl">
             Works

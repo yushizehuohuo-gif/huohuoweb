@@ -22,7 +22,11 @@ export default function Home() {
       <MotionObserver />
       <GrainOverlay />
       <SiteNav />
-      <main className="relative z-10 overflow-x-clip bg-paper">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="relative z-10 overflow-x-clip bg-paper"
+      >
         <CoverHero copy={coverCopy} index={personalIndex} />
         <PersonalIndex entries={personalIndex} tools={toolFootnotes} />
         <WorkTrace items={workTraces} />

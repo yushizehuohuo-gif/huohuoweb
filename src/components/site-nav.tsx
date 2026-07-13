@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 const navigationItems = [
   { href: "/#index", label: "INDEX" },
   { href: "/#work", label: "WORKS" },
-  { href: "/#visual", label: "VISUAL" },
-  { href: "/#notes", label: "NOTES" },
+  { href: "/#visual", label: "VISUAL", secondary: true },
+  { href: "/#notes", label: "NOTES", secondary: true },
 ] as const;
 
 function normalizePath(path: string) {
@@ -26,19 +26,25 @@ export default function SiteNav() {
 
   return (
     <header className="site-topbar fixed inset-x-0 top-0 z-20 px-5 py-5 sm:px-8 md:px-10 lg:px-12">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <nav
         aria-label="Primary navigation"
         className="grid grid-cols-[1fr_auto_1fr] items-start gap-4 font-display text-xs leading-none text-muted"
       >
         <Link
           href="/"
-          className="site-topbar-link justify-self-start text-ink"
+          className="site-topbar-link inline-flex justify-self-start text-ink"
           aria-label="HuoHuoOvO home"
         >
           HuoHuo/
         </Link>
 
-        <Link href="/#archive" className="site-topbar-link justify-self-center">
+        <Link
+          href="/#archive"
+          className="site-topbar-link hidden justify-self-center sm:inline-flex"
+        >
           OPEN
         </Link>
 
@@ -56,7 +62,10 @@ export default function SiteNav() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={[
-                  "site-topbar-link",
+                  "site-topbar-link inline-flex",
+                  "secondary" in item && item.secondary
+                    ? "site-topbar-secondary"
+                    : "",
                   isActive ? "text-ink" : "",
                 ].join(" ")}
               >
@@ -66,9 +75,9 @@ export default function SiteNav() {
           })}
           <Link
             href="/works/"
-            className="site-topbar-link hidden text-ink sm:inline-flex"
+            className="site-topbar-link inline-flex text-ink"
           >
-            MENU
+            ARCHIVE
           </Link>
         </div>
       </nav>

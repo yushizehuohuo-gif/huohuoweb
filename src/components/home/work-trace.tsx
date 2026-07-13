@@ -26,7 +26,7 @@ export default function WorkTrace({ items }: { items: WorkTraceItem[] }) {
               <article
                 key={item.title}
                 data-reveal
-                className="editorial-row work-news-row grid gap-4 border-t border-rule py-7 first:border-t-0 md:grid-cols-[8rem_minmax(13rem,0.38fr)_1fr_auto]"
+                className="editorial-row work-news-row grid items-start gap-4 border-t border-rule py-7 first:border-t-0 md:grid-cols-[7rem_minmax(0,1fr)] md:pr-14 xl:grid-cols-[7rem_minmax(15rem,0.72fr)_minmax(16rem,1fr)]"
               >
                 <p className="editorial-row-number font-mono text-xs uppercase text-muted">
                   {item.label}
@@ -34,7 +34,7 @@ export default function WorkTrace({ items }: { items: WorkTraceItem[] }) {
                 <h3 className="editorial-row-title font-display text-[clamp(1.45rem,2.2vw,2.5rem)] font-medium leading-tight text-ink">
                   {item.title}
                 </h3>
-                <div>
+                <div className="md:col-start-2 xl:col-start-3">
                   <p className="text-sm leading-7 text-deep md:text-base">
                     {item.description}
                   </p>

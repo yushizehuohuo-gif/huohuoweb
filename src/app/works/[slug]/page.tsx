@@ -64,7 +64,11 @@ export default async function WorkPage({ params }: WorkPageProps) {
     <>
       <GrainOverlay />
       <SiteNav />
-      <main className="relative z-10 overflow-x-clip px-6 pb-16 pt-28 md:px-10 md:pt-32 lg:px-16">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="relative z-10 overflow-x-clip px-6 pb-16 pt-28 md:px-10 md:pt-32 lg:px-16"
+      >
         <article>
           <header className="mb-10 md:mb-16">
             <Link
