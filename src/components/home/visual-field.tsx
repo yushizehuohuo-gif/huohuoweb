@@ -32,7 +32,7 @@ export default function VisualField() {
       <div className="mx-auto max-w-[1240px]">
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.36fr_0.64fr]">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase text-accent">
+            <p className="eyebrow eyebrow-accent">
               Visual field
             </p>
             <h2

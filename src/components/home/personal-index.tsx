@@ -17,7 +17,7 @@ export default function PersonalIndex({
       <div className="mx-auto max-w-[1240px]">
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.36fr_0.64fr]">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase text-accent">
+            <p className="eyebrow eyebrow-accent">
               Index
             </p>
             <h2
@@ -35,7 +35,7 @@ export default function PersonalIndex({
                   data-reveal
                   className="editorial-row index-sitemap-row grid gap-4 border-t border-rule py-6 first:border-t-0 md:grid-cols-[4rem_0.4fr_1fr_auto] md:py-8"
                 >
-                  <p className="editorial-row-number font-mono text-xs text-muted">
+                  <p className="editorial-row-number micro-meta text-muted">
                     {entry.label}
                   </p>
                   <h3 className="editorial-row-title font-display text-[clamp(1.65rem,3.2vw,3.6rem)] font-medium leading-[0.96] text-ink">
@@ -45,7 +45,7 @@ export default function PersonalIndex({
                     <p className="font-cjk text-sm leading-7 text-deep">
                       {entry.description}
                     </p>
-                    <p className="mt-3 text-xs leading-6 text-muted">
+                    <p className="micro-copy mt-3 text-muted">
                       {entry.details.join(" / ")}
                     </p>
                   </div>
@@ -85,7 +85,7 @@ export default function PersonalIndex({
           className="mt-12 grid gap-4 border-t border-rule pt-6 md:grid-cols-[0.36fr_0.64fr]"
           data-reveal
         >
-          <p className="font-mono text-xs uppercase text-muted">
+          <p className="eyebrow eyebrow-muted">
             Tool footnotes
           </p>
           <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">

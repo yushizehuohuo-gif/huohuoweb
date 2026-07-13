@@ -10,7 +10,7 @@ export default function ArchiveFooter() {
       <div className="mx-auto max-w-[1240px] border-t border-rule pt-8">
         <div className="grid gap-10 md:grid-cols-[0.24fr_0.4fr_0.36fr]">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase text-accent">A</p>
+            <p className="eyebrow eyebrow-accent">Archive</p>
             <h2
               id="archive-title"
               className="mt-12 font-cjk text-2xl font-medium leading-snug"
@@ -20,7 +20,7 @@ export default function ArchiveFooter() {
           </div>
 
           <div data-reveal>
-            <p className="font-mono text-xs uppercase text-muted">
+            <p className="eyebrow eyebrow-muted">
               Archive / links
             </p>
             <div className="mt-12 grid gap-4 font-display text-[clamp(1.6rem,3vw,3.4rem)] leading-none">
@@ -37,7 +37,7 @@ export default function ArchiveFooter() {
           </div>
 
           <div data-reveal>
-            <p className="font-mono text-xs uppercase text-muted">
+            <p className="eyebrow eyebrow-muted">
               Open topics
             </p>
             <p className="mt-12 max-w-[30rem] font-cjk text-sm leading-7 text-deep">
@@ -46,8 +46,8 @@ export default function ArchiveFooter() {
           </div>
         </div>
 
-        <div className="mt-18 grid gap-6 border-t border-rule pt-6 font-display text-xs text-muted md:grid-cols-[0.24fr_1fr_auto]">
-          <p className="font-mono text-xs uppercase text-accent">
+        <div className="micro-meta mt-18 grid gap-6 border-t border-rule pt-6 text-muted md:grid-cols-[0.24fr_1fr_auto]">
+          <p className="eyebrow eyebrow-accent">
             HuoHuoOvO
           </p>
           <p>

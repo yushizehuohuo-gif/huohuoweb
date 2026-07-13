@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import ArchiveFooter from "@/components/home/archive-footer";
 import CoverHero from "@/components/home/cover-hero";
 import MotionObserver from "@/components/home/motion-observer";
@@ -15,6 +16,21 @@ import {
   toolFootnotes,
   workTraces,
 } from "@/lib/homepage-content";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://yushizehuohuo-gif.github.io/huohuoweb/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "zh_CN",
+    url: "https://yushizehuohuo-gif.github.io/huohuoweb/",
+    siteName: "HuoHuoOvO",
+    title: "HuoHuoOvO",
+    description:
+      "A personal index of player signals, agent tools, visual fragments and field notes.",
+  },
+};
 
 export default function Home() {
   return (
