@@ -3,7 +3,8 @@ import type { NextConfig } from "next";
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [],
+    // Turbopack requires remark plugin names to be serializable strings.
+    remarkPlugins: ["remark-frontmatter"],
   },
 });
 

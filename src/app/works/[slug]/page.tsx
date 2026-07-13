@@ -5,7 +5,14 @@ import { notFound } from "next/navigation";
 import GrainOverlay from "@/components/grain-overlay";
 import SiteFooter from "@/components/site-footer";
 import SiteNav from "@/components/site-nav";
-import { getWorkBySlug, getWorkSlugs } from "@/lib/works";
+import WorkCover from "@/components/work-cover";
+import {
+  formatWorkStatus,
+  formatWorkType,
+  getAllWorks,
+  getWorkBySlug,
+  getWorkSlugs,
+} from "@/lib/works";
 import LowTemperatureRoom from "../../../../content/works/low-temperature-room.mdx";
 import QVersionDota2 from "../../../../content/works/q-version-dota2.mdx";
 import VisualLanguage2025 from "../../../../content/works/visual-language-2025.mdx";
@@ -37,10 +44,14 @@ export async function generateMetadata({
   return {
     title: work.title,
     description: work.description,
+    alternates: {
+      canonical: `https://yushizehuohuo-gif.github.io/huohuoweb/works/${work.slug}/`,
+    },
     openGraph: {
       title: `${work.title} | HuoHuoOvO`,
       description: work.description,
       type: "article",
+      url: `https://yushizehuohuo-gif.github.io/huohuoweb/works/${work.slug}/`,
       ...(work.coverExists && {
         images: [{ url: work.cover, alt: work.title }],
       }),
@@ -52,6 +63,11 @@ export default async function WorkPage({ params }: WorkPageProps) {
   const { slug } = await params;
   const work = await getWorkBySlug(slug);
   if (!work) notFound();
+
+  const works = await getAllWorks();
+  const currentIndex = works.findIndex((item) => item.slug === slug);
+  const previousWork = currentIndex > 0 ? works[currentIndex - 1] : null;
+  const nextWork = currentIndex < works.length - 1 ? works[currentIndex + 1] : null;
 
   const MdxContent = mdxModules[slug];
   if (!MdxContent) {
@@ -69,7 +85,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
         tabIndex={-1}
         className="relative z-10 overflow-x-clip px-6 pb-16 pt-28 md:px-10 md:pt-32 lg:px-16"
       >
-        <article>
+        <article className="mx-auto max-w-[1240px]">
           <header className="mb-10 md:mb-16">
             <Link
               href="/works/"
@@ -82,12 +98,12 @@ export default async function WorkPage({ params }: WorkPageProps) {
               {work.title}
             </h1>
 
-            <div className="mt-6 flex flex-wrap items-baseline gap-3 font-display text-sm text-muted sm:gap-4">
-              <span className="font-mono">{work.year}</span>
+            <div className="micro-meta mt-6 flex flex-wrap items-baseline gap-3 text-muted sm:gap-4">
+              <span>{work.year}</span>
               <span aria-hidden="true">·</span>
-              <span>{work.type}</span>
+              <span>{formatWorkType(work.type)}</span>
               <span aria-hidden="true">·</span>
-              <span>{work.status}</span>
+              <span>{formatWorkStatus(work.status)}</span>
               {work.role && (
                 <>
                   <span aria-hidden="true">·</span>
@@ -108,14 +124,12 @@ export default async function WorkPage({ params }: WorkPageProps) {
               />
             </div>
           ) : (
-            <div className="mb-10 grid aspect-[16/10] place-items-end border border-rule bg-[linear-gradient(135deg,#f4efe4_0%,#f4efe4_55%,#e3dacb_55%,#e3dacb_56%,#d8ccba_56%)] p-5 md:mb-16">
-              <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
-                visual pending
-              </span>
+            <div className="mb-10 md:mb-16">
+              <WorkCover work={work} />
             </div>
           )}
 
-          <div className="mx-auto max-w-[720px] [&>hr:first-child+h2]:hidden [&>hr:first-child]:hidden">
+          <div className="mx-auto max-w-[720px]">
             <MdxContent />
           </div>
 
@@ -127,6 +141,34 @@ export default async function WorkPage({ params }: WorkPageProps) {
               ← Back to Works
             </Link>
           </div>
+
+          <nav
+            aria-label="Adjacent works"
+            className="mx-auto mt-16 grid max-w-[960px] gap-px border border-rule bg-rule sm:grid-cols-2"
+          >
+            {previousWork ? (
+              <Link
+                href={`/works/${previousWork.slug}/`}
+                className="work-pagination-link bg-paper"
+              >
+                <span className="eyebrow eyebrow-muted">Previous work</span>
+                <span>{previousWork.title}</span>
+              </Link>
+            ) : (
+              <span className="hidden bg-paper sm:block" aria-hidden="true" />
+            )}
+            {nextWork ? (
+              <Link
+                href={`/works/${nextWork.slug}/`}
+                className="work-pagination-link bg-paper sm:text-right"
+              >
+                <span className="eyebrow eyebrow-muted">Next work</span>
+                <span>{nextWork.title}</span>
+              </Link>
+            ) : (
+              <span className="hidden bg-paper sm:block" aria-hidden="true" />
+            )}
+          </nav>
         </article>
       </main>
       <SiteFooter />

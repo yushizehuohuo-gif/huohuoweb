@@ -23,6 +23,8 @@ function normalizePath(path: string) {
 export default function SiteNav() {
   const pathname = usePathname();
   const currentPath = normalizePath(pathname);
+  const isArchiveActive =
+    currentPath === "/works" || currentPath.startsWith("/works/");
 
   return (
     <header className="site-topbar fixed inset-x-0 top-0 z-20 px-5 py-5 sm:px-8 md:px-10 lg:px-12">
@@ -75,7 +77,11 @@ export default function SiteNav() {
           })}
           <Link
             href="/works/"
-            className="site-topbar-link inline-flex text-ink"
+            aria-current={isArchiveActive ? "page" : undefined}
+            className={[
+              "site-topbar-link inline-flex",
+              isArchiveActive ? "text-accent" : "text-ink",
+            ].join(" ")}
           >
             ARCHIVE
           </Link>

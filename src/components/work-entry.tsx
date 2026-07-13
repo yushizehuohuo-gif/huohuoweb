@@ -1,29 +1,27 @@
 import Link from "next/link";
-import type { Work } from "@/lib/works";
+import WorkCover from "@/components/work-cover";
+import {
+  formatWorkStatus,
+  formatWorkType,
+  type Work,
+} from "@/lib/works";
 
 function WorkMeta({ work }: { work: Work }) {
   return (
-    <div className="mb-2 flex items-baseline gap-3 font-display text-xs leading-none text-muted sm:gap-4">
-      <span className="font-mono">{work.year}</span>
+    <div className="micro-meta mb-3 flex items-baseline gap-3 text-muted sm:gap-4">
+      <span>{work.year}</span>
       <span aria-hidden="true">·</span>
-      <span>{work.type}</span>
-      <span className="ml-auto text-right">{work.status}</span>
+      <span>{formatWorkType(work.type)}</span>
+      <span className="ml-auto text-right">
+        {formatWorkStatus(work.status)}
+      </span>
     </div>
   );
 }
 
 function RhythmCover({ work }: { work: Work }) {
   if (!work.coverExists) {
-    return (
-      <div
-        aria-hidden="true"
-        className="grid aspect-[16/10] w-full place-items-end border border-rule bg-[linear-gradient(135deg,#f4efe4_0%,#f4efe4_55%,#e3dacb_55%,#e3dacb_56%,#d8ccba_56%)] p-4"
-      >
-        <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
-          visual pending
-        </span>
-      </div>
-    );
+    return <WorkCover work={work} />;
   }
 
   return (

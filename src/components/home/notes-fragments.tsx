@@ -10,7 +10,7 @@ export default function NotesFragments({ notes }: { notes: NoteFragment[] }) {
       <div className="mx-auto max-w-[1240px]">
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.36fr_0.64fr]">
           <div data-reveal>
-            <p className="font-mono text-xs uppercase text-muted">
+            <p className="eyebrow eyebrow-muted">
               Notes
             </p>
             <h2
@@ -28,13 +28,13 @@ export default function NotesFragments({ notes }: { notes: NoteFragment[] }) {
                 className="editorial-row notes-ledger-row grid gap-4 border-t border-rule py-6 first:border-t-0 md:grid-cols-[5rem_1fr_10rem]"
                 data-reveal
               >
-                <p className="editorial-row-number font-mono text-xs uppercase text-accent">
+                <p className="editorial-row-number micro-meta uppercase text-accent">
                   {note.label}
                 </p>
                 <p className="editorial-row-title font-cjk text-[clamp(1.2rem,2vw,2rem)] font-medium leading-snug text-ink">
                   {note.text}
                 </p>
-                <p className="font-mono text-xs uppercase text-muted">
+                <p className="micro-meta uppercase text-muted">
                   public note
                 </p>
               </article>

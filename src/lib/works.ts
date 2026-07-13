@@ -17,6 +17,28 @@ export type WorkType = z.infer<typeof workTypeEnum>;
 export const workStatusEnum = z.enum(["completed", "in-progress", "archived"]);
 export type WorkStatus = z.infer<typeof workStatusEnum>;
 
+const workTypeLabels: Record<WorkType, string> = {
+  game: "Game",
+  visual: "Visual",
+  experiment: "Experiment",
+  writing: "Writing",
+  other: "Other",
+};
+
+const workStatusLabels: Record<WorkStatus, string> = {
+  completed: "Completed",
+  "in-progress": "In progress",
+  archived: "Archived",
+};
+
+export function formatWorkType(type: WorkType) {
+  return workTypeLabels[type];
+}
+
+export function formatWorkStatus(status: WorkStatus) {
+  return workStatusLabels[status];
+}
+
 export const workSchema = z.object({
   title: z.string().min(1),
   slug: z

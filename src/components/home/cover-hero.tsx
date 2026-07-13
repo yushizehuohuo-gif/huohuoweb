@@ -21,7 +21,7 @@ export default function CoverHero({
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-8.5rem)] max-w-[1480px] flex-col justify-end gap-14 md:min-h-[calc(100vh-9.5rem)]">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(320px,0.38fr)] lg:items-end">
           <div className="max-w-[960px]">
-            <p className="hero-reveal hero-reveal--0 font-mono text-[0.72rem] uppercase text-muted">
+            <p className="eyebrow eyebrow-muted hero-reveal hero-reveal--0">
               Personal index / 2026
             </p>
 
@@ -45,7 +45,7 @@ export default function CoverHero({
           </div>
 
           <aside className="hero-reveal hero-reveal--4 max-w-[27rem] border-t border-rule pt-5 lg:ml-auto">
-            <p className="font-mono text-xs uppercase text-accent">
+            <p className="eyebrow eyebrow-accent">
               HuoHuo Field Notes
             </p>
             <p className="mt-4 text-sm leading-7 text-muted">{copy.annotation}</p>
@@ -61,7 +61,7 @@ export default function CoverHero({
         >
           {index.slice(0, 5).map((item) => (
             <a key={item.id} href={item.href} className="cover-index-link group">
-              <span className="font-mono text-xs text-muted">{item.label}</span>
+              <span className="micro-meta text-muted">{item.label}</span>
               <span className="font-display text-lg font-medium text-ink">
                 {item.title}
               </span>
