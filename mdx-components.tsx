@@ -29,6 +29,9 @@ const components = {
     </a>
   ),
   img: ({ src, alt }: ComponentPropsWithoutRef<"img">) => (
+    // MDX authors may omit intrinsic dimensions, so a native lazy image is the
+    // safe fallback until the content schema can require width and height.
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt || ""}
