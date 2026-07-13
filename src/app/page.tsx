@@ -11,11 +11,11 @@ import SiteFooter from "@/components/site-footer";
 import SiteNav from "@/components/site-nav";
 import {
   coverCopy,
-  noteFragments,
   personalIndex,
   toolFootnotes,
   workTraces,
 } from "@/lib/homepage-content";
+import { getAllNotes } from "@/lib/notes";
 
 export const metadata: Metadata = {
   alternates: {
@@ -32,7 +32,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  const notes = await getAllNotes();
+
   return (
     <>
       <MotionObserver />
@@ -47,7 +49,7 @@ export default function Home() {
         <PersonalIndex entries={personalIndex} tools={toolFootnotes} />
         <WorkTrace items={workTraces} />
         <VisualField />
-        <NotesFragments notes={noteFragments} />
+        <NotesFragments notes={notes} />
         <ArchiveFooter />
       </main>
       <SiteFooter />

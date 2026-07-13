@@ -7,7 +7,7 @@ const navigationItems = [
   { href: "/#index", label: "INDEX" },
   { href: "/#work", label: "WORKS" },
   { href: "/#visual", label: "VISUAL", secondary: true },
-  { href: "/#notes", label: "NOTES", secondary: true },
+  { href: "/notes/", label: "NOTES" },
 ] as const;
 
 function normalizePath(path: string) {
