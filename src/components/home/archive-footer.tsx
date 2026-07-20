@@ -15,7 +15,7 @@ export default function ArchiveFooter() {
               id="archive-title"
               className="mt-12 font-cjk text-2xl font-medium leading-snug"
             >
-              当前公开入口。
+              继续看作品与文章。
             </h2>
           </div>
 
@@ -38,10 +38,10 @@ export default function ArchiveFooter() {
 
           <div data-reveal>
             <p className="eyebrow eyebrow-muted">
-              Open topics
+              Open topics / 可以聊什么
             </p>
             <p className="mt-12 max-w-[30rem] font-cjk text-sm leading-7 text-deep">
-              游戏社区、玩家情绪、AI 工作流、本地 Agent、视觉系统、个人知识库，以及那些仍然需要人来判断的部分。
+              欢迎聊游戏社区、玩家反馈、AI 工作流、视觉系统，以及工具无法替人做出的判断。
             </p>
           </div>
         </div>
@@ -51,8 +51,7 @@ export default function ArchiveFooter() {
             HuoHuoOvO
           </p>
           <p>
-            Personal index for player signals, agent tools, visual fragments and
-            field notes.
+            Community work, AI workflows, visual practice, and personal writing.
           </p>
           <p>© 2026</p>
         </div>

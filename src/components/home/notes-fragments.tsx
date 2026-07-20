@@ -12,13 +12,13 @@ export default function NotesFragments({ notes }: { notes: Note[] }) {
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.36fr_0.64fr]">
           <div data-reveal>
             <p className="eyebrow eyebrow-muted">
-              Notes
+              Personal writing
             </p>
             <h2
               id="notes-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug md:text-3xl"
             >
-              留下来的灰烬
+              九篇旧文，写到今天。
             </h2>
           </div>
 
@@ -60,7 +60,7 @@ export default function NotesFragments({ notes }: { notes: Note[] }) {
               href="/notes/"
               className="editorial-link mt-3 inline-flex items-center gap-3 font-display text-sm text-muted transition-colors hover:text-accent focus-visible:text-accent"
             >
-              Read all notes <span aria-hidden="true">↗</span>
+              查看全部笔记 <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </div>

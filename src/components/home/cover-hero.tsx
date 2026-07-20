@@ -22,7 +22,7 @@ export default function CoverHero({
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.62fr)_minmax(320px,0.38fr)] lg:items-end">
           <div className="max-w-[960px]">
             <p className="eyebrow eyebrow-muted hero-reveal hero-reveal--0">
-              Personal index / 2026
+              Community / Systems / Visuals / Notes
             </p>
 
             <h1
@@ -50,7 +50,7 @@ export default function CoverHero({
             </p>
             <p className="mt-4 text-sm leading-7 text-muted">{copy.annotation}</p>
             <p className="mt-8 font-cjk text-sm leading-7 text-deep">
-              游戏社区、Agent 工作流、视觉碎片和未完成的笔记，被放在同一张安静的索引页上。
+              社区内容、玩家反馈、AI 工作流、视觉实验与个人写作。
             </p>
           </aside>
         </div>

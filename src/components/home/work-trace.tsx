@@ -11,13 +11,13 @@ export default function WorkTrace({ items }: { items: WorkTraceItem[] }) {
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.32fr_0.68fr]">
           <div data-reveal>
             <p className="eyebrow eyebrow-accent">
-              Work trace
+              Selected work
             </p>
             <h2
               id="work-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug text-ink md:text-3xl"
             >
-              不是项目墙，是工作留下的痕迹。
+              把玩家反馈，变成判断与行动。
             </h2>
           </div>
 

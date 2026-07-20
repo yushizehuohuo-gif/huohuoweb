@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Works | HuoHuoOvO",
-    description: "Selected work traces, visual studies and ongoing experiments.",
+    description: "游戏社区、视觉实验与个人项目的公开档案。",
     url: "https://yushizehuohuo-gif.github.io/huohuoweb/works/",
     type: "website",
   },
-  description: "作品档案 - HuoHuoOvO 的创作记录。",
+  description: "游戏社区、视觉实验与个人项目的公开档案。",
 };
 
 export default async function WorksPage() {
@@ -44,7 +44,7 @@ export default async function WorksPage() {
               Works
             </h1>
             <p className="mt-5 max-w-2xl font-cjk text-base leading-[1.85] text-muted md:text-lg">
-              作品档案 - 一些完成的和未完成的东西。
+              公开项目与视觉研究，包括 DOTA2 内容创作、个人视觉系统和持续实验。
             </p>
           </div>
 
