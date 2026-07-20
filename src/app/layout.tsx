@@ -35,12 +35,16 @@ export const metadata: Metadata = {
   keywords: [
     "HuoHuoOvO",
     "YUSHIZE",
+    "游戏社区",
+    "内容运营",
+    "玩家反馈",
     "game community",
     "AI workflow",
     "visual system",
     "field notes",
   ],
-  description: "一些低温燃烧的东西。",
+  description:
+    "YUSHIZE（火火）的个人网站：游戏社区与内容工作、AI 工作流、视觉实验与个人写作。",
 };
 
 export const viewport: Viewport = {

@@ -18,13 +18,13 @@ export default function PersonalIndex({
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.36fr_0.64fr]">
           <div data-reveal>
             <p className="eyebrow eyebrow-accent">
-              Index
+              Start here
             </p>
             <h2
               id="index-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug text-ink md:text-3xl"
             >
-              不是介绍页，是入口目录。
+              我做社区内容，也搭建新的工作方法。
             </h2>
           </div>
 
@@ -86,7 +86,7 @@ export default function PersonalIndex({
           data-reveal
         >
           <p className="eyebrow eyebrow-muted">
-            Tool footnotes
+            How I work
           </p>
           <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {tools.map((item) => (

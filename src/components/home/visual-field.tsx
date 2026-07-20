@@ -4,21 +4,21 @@ const visualBlocks = [
     title: "HUOHUO",
     mode: "dark",
     words: ["HUOHUO", "HUOHUO", "HUOHUO", "HUOHUO"],
-    caption: "identity text as field texture",
+    caption: "将名字变成可重复的识别纹理",
   },
   {
     label: "visual 02",
     title: "一些低温燃烧的东西",
     mode: "light",
     words: ["一些低温燃烧的东西", "一些低温燃烧的东西"],
-    caption: "the anchor line stays clear, not explained",
+    caption: "把核心句子保留为情绪锚点",
   },
   {
     label: "visual 03",
-    title: "UNFINISHED",
+    title: "FIELD NOTES",
     mode: "blue",
-    words: ["FIELD NOTES", "UNFINISHED", "WORKS", "TOOLS"],
-    caption: "notes, work and tools share the same typographic system",
+    words: ["FIELD NOTES", "WORKS", "VISUAL", "TOOLS"],
+    caption: "让作品、工具与笔记共享一套字体秩序",
   },
 ] as const;
 
@@ -33,16 +33,16 @@ export default function VisualField() {
         <div className="grid gap-8 border-t border-rule pt-8 md:grid-cols-[0.36fr_0.64fr]">
           <div data-reveal>
             <p className="eyebrow eyebrow-accent">
-              Visual field
+              Visual practice
             </p>
             <h2
               id="visual-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug md:text-3xl"
             >
-              文字本身成为视觉块。
+              让内容拥有自己的形状。
             </h2>
             <p className="mt-5 max-w-[24rem] font-cjk text-sm leading-7 text-deep">
-              不再依赖临时图片占位。这里用 HuoHuo、火火、FIELD NOTES 和未完成的词，搭一组可继续扩展的文字视觉系统。
+              文字、重复、纸张质感与高对比蓝色，是这套个人视觉语言的基础；它们让社区工作、工具实践与私人写作保持不同，也彼此相连。
             </p>
           </div>
 

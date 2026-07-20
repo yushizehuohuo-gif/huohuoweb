@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     locale: "zh_CN",
     url: "https://yushizehuohuo-gif.github.io/huohuoweb/",
     siteName: "HuoHuoOvO",
-    title: "HuoHuoOvO",
+    title: "YUSHIZE / HuoHuoOvO",
     description:
-      "A personal index of player signals, agent tools, visual fragments and field notes.",
+      "YUSHIZE（火火）的个人网站：记录游戏社区与内容工作、玩家反馈、AI 工作流、视觉实验与个人写作。",
   },
 };
 
