@@ -1,5 +1,27 @@
 import type { Metadata, Viewport } from "next";
+import { IBM_Plex_Mono, Noto_Sans_SC, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-grotesk-next",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-ibm-plex-mono-next",
+});
+
+const notoSansSc = Noto_Sans_SC({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-noto-sans-sc-next",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yushizehuohuo-gif.github.io/huohuoweb/"),
@@ -32,7 +54,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className="h-full antialiased">
+    <html
+      lang="zh-CN"
+      className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} ${notoSansSc.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          id="html-js-class"
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

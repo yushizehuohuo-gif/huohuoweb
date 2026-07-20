@@ -1,44 +1,45 @@
 # HuoHuoOvO
 
-HuoHuoOvO 的个人工作索引与作品档案。网站以杂志式编排呈现游戏社区、视觉实验和长期项目记录，并针对桌面端与移动端做了响应式适配。
+个人网站与作品索引。方向是低温科技杂志式的个人档案：游戏社区、AI 工作流、视觉系统、笔记和公开作品放在同一个安静的索引里。
 
-线上地址：[yushizehuohuo-gif.github.io/huohuoweb](https://yushizehuohuo-gif.github.io/huohuoweb/)
+线上地址：https://yushizehuohuo-gif.github.io/huohuoweb/
 
 ## 技术栈
 
 - Next.js 16 App Router
-- React 19 + TypeScript
+- React 19
+- TypeScript
 - Tailwind CSS 4
-- MDX 作品内容
-- GitHub Pages 静态部署
+- MDX 内容
+- `output: "export"` 静态导出到 GitHub Pages
 
-## 本地运行
+## 目录结构
+
+- `src/app/`：App Router 页面、布局、metadata route
+- `src/components/`：站点组件和首页区块
+- `src/lib/`：内容读取、排序和 frontmatter 校验
+- `content/works/`：作品 MDX
+- `content/notes/`：笔记 MDX
+- `docs/`：设计、实现和任务文档
+- `public/`：静态资源
+
+## 本地开发
 
 ```bash
 npm ci
 npm run dev
 ```
 
-打开 [http://localhost:3000/](http://localhost:3000/)。生产构建会自动挂载到 GitHub Pages 的 `/huohuoweb/` 路径。
+开发服务器默认运行在 http://localhost:3000/。
 
-提交前可运行完整检查：
+提交前检查：
 
 ```bash
-npm run lint
-npx tsc --noEmit
 npm run build
+npx tsc --noEmit
+npm run lint
 ```
-
-## 内容结构
-
-- `src/app/page.tsx`：主页入口
-- `src/components/home/`：主页各编辑区块
-- `src/app/works/`：作品索引与作品详情页
-- `content/works/`：MDX 作品正文
-- `src/lib/works.ts`：作品读取、排序与元数据格式化
-
-新增作品时，在 `content/works/` 创建 MDX 文件并填写 frontmatter；缺少封面图片时，页面会使用项目内置的代码生成封面。
 
 ## 部署
 
-推送到 `master` 后，`.github/workflows/pages.yml` 会构建静态站点并发布到 GitHub Pages。
+项目使用静态导出。推送到 `master` 后，GitHub Actions 构建 Next.js，生成 `out/`，再发布到 GitHub Pages。生产环境使用 `/huohuoweb` 作为 base path。
