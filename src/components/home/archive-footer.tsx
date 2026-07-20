@@ -15,7 +15,7 @@ export default function ArchiveFooter() {
               id="archive-title"
               className="mt-12 font-cjk text-2xl font-medium leading-snug"
             >
-              继续查看作品与文章。
+              继续看作品与文章。
             </h2>
           </div>
 
@@ -41,7 +41,7 @@ export default function ArchiveFooter() {
               Open topics / 可以聊什么
             </p>
             <p className="mt-12 max-w-[30rem] font-cjk text-sm leading-7 text-deep">
-              欢迎聊游戏社区与内容、玩家反馈、AI 工作流、视觉系统和个人知识库，也欢迎讨论那些工具无法替人做出的判断。
+              欢迎聊游戏社区、玩家反馈、AI 工作流、视觉系统，以及工具无法替人做出的判断。
             </p>
           </div>
         </div>

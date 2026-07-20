@@ -17,7 +17,7 @@ export default function WorkTrace({ items }: { items: WorkTraceItem[] }) {
               id="work-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug text-ink md:text-3xl"
             >
-              把玩家反馈，变成内容、判断与行动。
+              把玩家反馈，变成判断与行动。
             </h2>
           </div>
 

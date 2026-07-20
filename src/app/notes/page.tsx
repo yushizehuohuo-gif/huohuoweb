@@ -40,7 +40,7 @@ export default async function NotesPage() {
               </p>
             </div>
             <h1 className="mt-8 max-w-3xl font-cjk text-4xl font-medium leading-tight text-ink md:text-6xl">
-              九篇旧文，和它们留下的时间。
+              九篇旧文，留下的时间。
             </h1>
             <p className="mt-6 max-w-2xl font-cjk text-base leading-[1.9] text-muted md:text-lg">
               从大学时期到现在，关于相聚、晚安、友谊、爱情、意识与燃烧的九篇文字。

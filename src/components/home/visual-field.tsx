@@ -39,10 +39,10 @@ export default function VisualField() {
               id="visual-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug md:text-3xl"
             >
-              让内容拥有自己的形状。
+              让内容拥有形状。
             </h2>
             <p className="mt-5 max-w-[24rem] font-cjk text-sm leading-7 text-deep">
-              文字、重复、纸张质感与高对比蓝色，是这套个人视觉语言的基础；它们让社区工作、工具实践与私人写作保持不同，也彼此相连。
+              文字、重复、纸张质感与高对比蓝色，连接社区工作、工具实践与私人写作。
             </p>
           </div>
 

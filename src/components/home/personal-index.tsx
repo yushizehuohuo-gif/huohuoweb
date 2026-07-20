@@ -24,7 +24,7 @@ export default function PersonalIndex({
               id="index-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug text-ink md:text-3xl"
             >
-              我做社区内容，也搭建新的工作方法。
+              我做社区内容，也改进工作方法。
             </h2>
           </div>
 

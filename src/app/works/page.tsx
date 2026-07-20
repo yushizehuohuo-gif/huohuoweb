@@ -44,7 +44,7 @@ export default async function WorksPage() {
               Works
             </h1>
             <p className="mt-5 max-w-2xl font-cjk text-base leading-[1.85] text-muted md:text-lg">
-              这里收录已经公开的项目与视觉研究，包括 DOTA2 内容创作、个人视觉系统和持续进行的实验。
+              公开项目与视觉研究，包括 DOTA2 内容创作、个人视觉系统和持续实验。
             </p>
           </div>
 

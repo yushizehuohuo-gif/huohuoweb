@@ -50,7 +50,7 @@ export default function CoverHero({
             </p>
             <p className="mt-4 text-sm leading-7 text-muted">{copy.annotation}</p>
             <p className="mt-8 font-cjk text-sm leading-7 text-deep">
-              这里记录我如何理解玩家、组织社区内容、搭建 AI 工作流，也保留视觉实验和个人写作。
+              社区内容、玩家反馈、AI 工作流、视觉实验与个人写作。
             </p>
           </aside>
         </div>

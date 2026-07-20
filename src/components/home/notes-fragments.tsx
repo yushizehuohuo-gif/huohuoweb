@@ -18,7 +18,7 @@ export default function NotesFragments({ notes }: { notes: Note[] }) {
               id="notes-title"
               className="mt-4 max-w-[18rem] font-cjk text-2xl font-medium leading-snug md:text-3xl"
             >
-              从大学写到现在的九篇旧文。
+              九篇旧文，写到今天。
             </h2>
           </div>
 
