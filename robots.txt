@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://yushizehuohuo-gif.github.io/huohuoweb/sitemap.xml
